@@ -1,5 +1,6 @@
 package com.example.examplemod;
 
+import com.example.examplemod.commands.BadSelectorCommand;
 import com.example.examplemod.commands.SelectorCommand;
 import com.example.examplemod.commands.SetRedstoneCommand;
 import com.example.examplemod.commands.ZahyouCommand;
@@ -38,6 +39,7 @@ public class ThelowDevHelper { // select ExampleMod and hit shift+F6 to rename i
         ClientCommandHandler.instance.registerCommand(new SelectorCommand());
         ClientCommandHandler.instance.registerCommand(new SetRedstoneCommand());
         ClientCommandHandler.instance.registerCommand(new ZahyouCommand());
+        ClientCommandHandler.instance.registerCommand(new BadSelectorCommand());
 
         // the ExampleKeybind has a method with the @SubscribeEvent annotation
         // for that code to run, that class needs to be registered on the MinecraftForge EVENT_BUS
@@ -45,6 +47,8 @@ public class ThelowDevHelper { // select ExampleMod and hit shift+F6 to rename i
         //MinecraftForge.EVENT_BUS.register(new ExampleKeybindListener());
         //MinecraftForge.EVENT_BUS.register(new ExampleHUD());
         MinecraftForge.EVENT_BUS.register(new LocateChatHandler());
+        MinecraftForge.EVENT_BUS.register(new BadSelectorChatHandler());
+        
 
         if (Loader.isModLoaded("patcher")) {
             // this code will only run if the mod with id "patcher" is loaded
