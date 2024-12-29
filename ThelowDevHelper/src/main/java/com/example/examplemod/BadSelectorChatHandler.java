@@ -27,17 +27,15 @@ public class BadSelectorChatHandler {
         
 
             // "command set:" または "コマンドを設定しました:" に一致するかチェック
-            if (message.startsWith("command set") || message.startsWith("コマンドを設定しました")) {
-            	
-
-                // メッセージからコマンド部分を取得
+            if (message.startsWith("コマンドを設定しました")) {
                 String cmd = message.split(" ", 2)[1].trim();
-
-                // コマンド変数に代入
                 command = cmd;
-
-                // @a を @.a に置換
                 setReplacedCommand(command.replace("@a", "@.a"));
+            } else if (message.startsWith("Command set")) {
+                String cmd = message.split(" ", 3)[2].trim();
+                command = cmd;
+                setReplacedCommand(command.replace("@a", "@.a"));
+            	
             }
                 	
                 
