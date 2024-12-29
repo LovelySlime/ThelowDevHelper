@@ -82,7 +82,7 @@ public class ZahyouCommand  extends CommandBase{
     	if (arg1Success && arg2Success) {
     		StringSelection selection = new StringSelection(text);
     		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);
-    		sendChatMessage(EnumChatFormatting.LIGHT_PURPLE + "pos : 指定したコンディションの座標を、クリップボードに貼り付けしました。");
+    		sendChatMessage(EnumChatFormatting.LIGHT_PURPLE + "[!] pos : 指定したコンディションの座標を、クリップボードに貼り付けしました。");
     	}
     }
 
